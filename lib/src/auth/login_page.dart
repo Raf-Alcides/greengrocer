@@ -1,6 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:greengrocer/src/auth/components/custom_elevated_button.dart';
 import 'package:greengrocer/src/auth/components/custom_text_fild.dart';
+import 'package:greengrocer/src/auth/register_page.dart';
 import 'package:greengrocer/src/config/custom_color.dart';
 
 class LoginPage extends StatelessWidget {
@@ -82,24 +84,7 @@ class LoginPage extends StatelessWidget {
                       isSecret: true,
                     ),
                     //*botao Login
-                    SizedBox(
-                      height: 50,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                            ),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: const Text(
-                          'Entrar',
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                    ),
+                    const CustomElevatedButton(name: 'Login'),
                     //*Esqueceu Senha
                     Align(
                       alignment: Alignment.centerRight,
@@ -140,7 +125,15 @@ class LoginPage extends StatelessWidget {
                     SizedBox(
                       height: 50,
                       child: OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) {
+                                return Register();
+                              } 
+                            )
+                          );
+                        },
                         style: ButtonStyle(
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
