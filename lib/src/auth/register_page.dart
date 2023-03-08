@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/auth/components/custom_elevated_button.dart';
 import 'package:greengrocer/src/auth/components/custom_text_fild.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
@@ -7,14 +6,10 @@ class Register extends StatelessWidget {
   Register({Key? key}) : super(key: key);
 
   final cpfFormatter = MaskTextInputFormatter(
-    mask: '###.###.###-##',
-    filter: {'#':RegExp(r'[0-9]')}
-  );
+      mask: '###.###.###-##', filter: {'#': RegExp(r'[0-9]')});
 
-   final phoneFormatter = MaskTextInputFormatter(
-    mask: '(##) # ####-####',
-    filter: {'#':RegExp(r'[0-9]')}
-  );
+  final phoneFormatter = MaskTextInputFormatter(
+      mask: '(##) # ####-####', filter: {'#': RegExp(r'[0-9]')});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +45,7 @@ class Register extends StatelessWidget {
                             BorderRadius.vertical(top: Radius.circular(45))),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children:  [
+                      children: [
                         const CustomTextFild(
                           icon: Icons.email,
                           label: 'Email',
@@ -78,7 +73,24 @@ class Register extends StatelessWidget {
                           inputFormatters: [cpfFormatter],
                           keyboardType: TextInputType.number,
                         ),
-                        const CustomElevatedButton(name: 'Cadastrar Usuario')
+                        SizedBox(
+                          height: 50,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                ),
+                              ),
+                            ),
+                            onPressed: () {},
+                            child: const Text(
+                              'Cadastrar Usuario',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   )
