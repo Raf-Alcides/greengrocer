@@ -1,9 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/auth/components/custom_text_fild.dart';
-import 'package:greengrocer/src/auth/register_page.dart';
-import 'package:greengrocer/src/base/base_page.dart';
 import 'package:greengrocer/src/config/custom_color.dart';
+import 'package:greengrocer/src/pages/auth/register_page.dart';
+
+import '../base/base_page.dart';
+import 'components/custom_text_fild.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -98,7 +99,7 @@ class LoginPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context)
                               .pushReplacement(MaterialPageRoute(builder: (_) {
-                            return BasePage();
+                            return const BasePage();
                           }));
                         },
                         child: const Text(

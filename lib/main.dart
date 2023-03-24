@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'src/auth/login_page.dart';
+import 'src/pages/auth/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        scaffoldBackgroundColor: Colors.white.withAlpha(190)
       ),
       debugShowCheckedModeBanner: false,
       home: const LoginPage(),

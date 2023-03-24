@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/src/auth/components/custom_text_fild.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+
+import 'components/custom_text_fild.dart';
 
 class Register extends StatelessWidget {
   Register({Key? key}) : super(key: key);

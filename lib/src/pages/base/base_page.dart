@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../home/home_tab.dart';
+
 class BasePage extends StatefulWidget {
   const BasePage({Key? key}) : super(key: key);
 
@@ -18,7 +20,7 @@ class _BasePageState extends State<BasePage> {
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: [
-          Container(color: Colors.red),
+           const HomeTab(),
           Container(color: Colors.black),
           Container(color: Colors.white),
           Container(color: Colors.purple),
